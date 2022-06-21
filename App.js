@@ -7,7 +7,7 @@ import AssetExample from './components/CPA2';
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text style={{fontWeight: 'bold', textAlign: 'center', fontFamily:'Bangla MN', fontSize: 40}}>  CHEM3D </Text>
+      <Text style={{fontWeight: 'bold', textAlign: 'center', fontFamily:'Bangla MN', fontSize: 40}}>  CHEM3D    </Text>
       <AssetExample/>
     </View>
   );
