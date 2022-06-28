@@ -38,7 +38,7 @@ function HomeScreen({ navigation }) {
   );
 }
 
-function ByTopicScreen({ ByTopic }) {
+function ByTopicScreen({ navigation }) {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'space-evenly', backgroundColor:'lavenderblush' }}>
       <Button color="lightcoral" 
