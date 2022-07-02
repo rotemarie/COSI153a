@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, View, Image, TextInput, Button } from "react-native";
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import {useValue} from './ValueStorageContext';
 
-const Feedback = () => {
+const Feedback = ({ navigation }) => {
   const [fb,setFB] = useState('');
+  const {currentValue} = useValue();
 
   return (
     <View style={{ flex: 1, padding:0, backgroundColor:"lavenderblush", flexDirection:'column', justifyContent: 'space-evenly'}}>
@@ -12,7 +16,12 @@ const Feedback = () => {
                 onChangeText = {(text) => {setFB(text)}}
                 defaultValue = {fb}
       />    
-      <Button color='lightcoral' title='SUBMIT' />
+      <Button color='lightcoral' title='SUBMIT' 
+        onPress = {() => {
+          console.log('sending feedback....');
+          currentValue.sendFeedback(fb);
+          setFB("")}}
+      />
       <Button color="lightcoral" 
         title="Go back" onPress={() => navigation.goBack()} />
     </View>
@@ -21,3 +30,5 @@ const Feedback = () => {
 
 
 export default Feedback;
+
+
