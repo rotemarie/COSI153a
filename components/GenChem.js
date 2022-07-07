@@ -1,27 +1,27 @@
-import * as React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Button, View, Text } from 'react-native';
+import { Linking } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
-function ByClassScreen({ navigation }) {
+function GenChem({ navigation }) {
+    const mg = "https://sketchfab.com/efrenr/collections/electronicmolecular-geometries"
+
     return (
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'space-evenly', backgroundColor:'lavenderblush' }}>
         <Button color="lightcoral" 
-          title="Gen Chem"
-          onPress={() => navigation.navigate('GenChem')}
+          title="Atomic Orbitals"
+          onPress={() => navigation.navigate('AtomicOrbitals')}
         />
-        <Button color="lightcoral" 
-          title="Orgo I"
-          onPress={() => navigation.navigate('OrgoI')}
-        />
-        <Button color="lightcoral" 
-          title="Orgo II"
-          onPress={() => navigation.navigate('OrgoII')}
+        <Button color="lightcoral"
+            title="Molecular Geometries"
+            onPress={() => Linking.openURL(mg)}
         />
         <Button color="lightcoral" 
           title="Go back" onPress={() => navigation.goBack()} />
+        
       </View>
     );
   }
 
-  export default ByClassScreen;
+  export default GenChem;

@@ -1,27 +1,23 @@
-import * as React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Button, View, Text } from 'react-native';
+import { Linking } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
-function ByClassScreen({ navigation }) {
+function OrgoII({ navigation }) {
+    const pc = "https://www.youtube.com/watch?v=16k18HYkZZM";
+
     return (
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'space-evenly', backgroundColor:'lavenderblush' }}>
         <Button color="lightcoral" 
-          title="Gen Chem"
-          onPress={() => navigation.navigate('GenChem')}
-        />
-        <Button color="lightcoral" 
-          title="Orgo I"
-          onPress={() => navigation.navigate('OrgoI')}
-        />
-        <Button color="lightcoral" 
-          title="Orgo II"
-          onPress={() => navigation.navigate('OrgoII')}
+          title="Pericyclics"
+          onPress={() => Linking.openURL(pc)}
         />
         <Button color="lightcoral" 
           title="Go back" onPress={() => navigation.goBack()} />
+        
       </View>
     );
   }
 
-  export default ByClassScreen;
+  export default OrgoII;
